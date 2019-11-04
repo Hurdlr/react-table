@@ -394,7 +394,7 @@ export default Base =>
           if (sortMethodsByColumnID[sort.id]) {
             return (a, b) => sortMethodsByColumnID[sort.id](a[sort.id], b[sort.id], sort.desc)
           }
-          return (a, b) => this.props.defaultSortMethod(a[sort.id], b[sort.id], sort.desc)
+          return (a, b) => this.props.defaultSortMethod(a[sort.id], b[sort.id], sort.desc, a, b)
         }),
         sorted.map(d => !d.desc),
         this.props.indexKey
